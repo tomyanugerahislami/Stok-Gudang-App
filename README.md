@@ -17,14 +17,14 @@ Tabel identitas pengembang / mahasiswa untuk keperluan pengumpulan tugas, ujian 
 
 | Komponen | Keterangan |
 |---|---|
-| **Nama Lengkap** | [Nama Lengkap Anda] |
+| **Nama Lengkap** | Tomy Anugerah Islami |
 | **NIM** | [Nomor Induk Mahasiswa] |
 | **Kelas** | [Kelas / Kelompok Anda] |
 | **Program Studi** | [Nama Program Studi / Jurusan] |
 | **Fakultas / Universitas**| [Nama Fakultas / Universitas] |
 | **Mata Kuliah** | [Nama Mata Kuliah] |
 | **Dosen Pengampu** | [Nama Dosen Pengampu] |
-| **Tautan Repository** | [https://github.com/username/stok-gudang-app](https://github.com/username/stok-gudang-app) |
+| **Tautan Repository** | [https://github.com/tomyanugerahislami/Stok-Gudang-App](https://github.com/tomyanugerahislami/Stok-Gudang-App) |
 | **Versi Aplikasi** | v1.0.0 (Release) |
 
 ---
