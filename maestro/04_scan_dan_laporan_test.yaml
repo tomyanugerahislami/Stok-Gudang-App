@@ -1,0 +1,13 @@
+appId: com.example.stok_gudang_app
+---
+# GUI test: membuka fitur scan dan halaman laporan
+- launchApp
+- tapOn:
+    text: ".*Scan.*"
+- assertVisible:
+    text: ".*Scan.*"
+# Izin kamera atau pemindai dapat muncul tergantung implementasi aplikasi.
+- tapOn:
+    text: ".*Laporan.*"
+- assertVisible:
+    text: ".*Laporan.*"
