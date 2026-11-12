@@ -31,42 +31,42 @@ class MaestroTestScreen extends StatefulWidget {
 }
 
 class _MaestroTestScreenState extends State<MaestroTestScreen> {
-  static const String _maestroDir = r'C:\FLUTTER PROJECT\maestro';
+  static const String _maestroDir = 'maestro';
 
   final List<MaestroTest> _tests = const [
     MaestroTest(
       id: '01',
-      title: 'Login Test',
-      description: 'Menguji alur login dengan email & password, memastikan halaman Dashboard muncul setelah berhasil masuk.',
-      fileName: '01_login_test.yaml',
-      filePath: r'C:\FLUTTER PROJECT\maestro\01_login_test.yaml',
+      title: 'Login Auth & Validasi',
+      description: 'Menguji alur validasi field kosong, validasi format email salah, serta login sukses via role demo admin.',
+      fileName: '01_login_auth_validasi.yaml',
+      filePath: 'maestro/01_login_auth_validasi.yaml',
       icon: Icons.login_rounded,
       color: Color(0xFF1E3A8A),
     ),
     MaestroTest(
       id: '02',
-      title: 'Dashboard Test',
-      description: 'Memastikan halaman Dashboard tampil dan menu utama (Stok, Barang, Laporan) tersedia.',
-      fileName: '02_dashboard_test.yaml',
-      filePath: r'C:\FLUTTER PROJECT\maestro\02_dashboard_test.yaml',
-      icon: Icons.dashboard_rounded,
+      title: 'Navigasi Antar Menu',
+      description: 'Menguji transisi mulus antar menu utama (Dashboard, Produk, Barang Masuk, Stok & Mutasi, dan Scan Barcode).',
+      fileName: '02_navigasi_antar_menu.yaml',
+      filePath: 'maestro/02_navigasi_antar_menu.yaml',
+      icon: Icons.navigation_rounded,
       color: Color(0xFF0D9488),
     ),
     MaestroTest(
       id: '03',
-      title: 'Stok Barang Test',
-      description: 'Membuka menu Stok, mencoba alur tambah barang baru, dan memverifikasi barang berhasil disimpan.',
-      fileName: '03_stok_barang_test.yaml',
-      filePath: r'C:\FLUTTER PROJECT\maestro\03_stok_barang_test.yaml',
+      title: 'CRUD Produk',
+      description: 'Menguji alur lengkap Create produk baru, pencarian Read, serta inspeksi detail produk di katalog.',
+      fileName: '03_crud_produk.yaml',
+      filePath: 'maestro/03_crud_produk.yaml',
       icon: Icons.inventory_2_rounded,
       color: Color(0xFF7C3AED),
     ),
     MaestroTest(
       id: '04',
-      title: 'Scan & Laporan Test',
-      description: 'Membuka fitur Scan barcode dan halaman Laporan, memastikan navigasi antar fitur berjalan lancar.',
-      fileName: '04_scan_dan_laporan_test.yaml',
-      filePath: r'C:\FLUTTER PROJECT\maestro\04_scan_dan_laporan_test.yaml',
+      title: 'Scan & Mutasi Stok Gudang',
+      description: 'Menguji fitur pemindaian barcode manual serta monitoring mutasi stok fisik di kartu stok gudang.',
+      fileName: '04_scan_dan_mutasi_stok.yaml',
+      filePath: 'maestro/04_scan_dan_mutasi_stok.yaml',
       icon: Icons.qr_code_scanner_rounded,
       color: Color(0xFFD97706),
     ),

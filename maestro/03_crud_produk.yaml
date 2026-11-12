@@ -1,0 +1,58 @@
+appId: com.stokgudang.stok_gudang_app
+---
+# =======================================================
+# Skenario 03: CRUD Produk (Create, Read, Update, Detail)
+# Menguji penambahan produk baru, pencarian, dan melihat detail
+# =======================================================
+
+- launchApp
+
+# 1. Masuk ke halaman Katalog Produk
+- tapOn:
+    id: "nav_bar_produk"
+- assertVisible:
+    text: ".*Katalog Produk.*"
+
+# 2. [CREATE] Buka form Tambah Produk
+- tapOn:
+    id: "btn_add_product"
+- assertVisible:
+    text: ".*Tambah Produk Baru.*"
+
+# Isi informasi data master produk
+- tapOn:
+    id: "input_product_name"
+- inputText: "Mouse Wireless Maestro Test"
+
+- tapOn:
+    id: "input_product_sku"
+- eraseText: 20
+- inputText: "SKU-MAE-001"
+
+- tapOn:
+    id: "input_product_barcode"
+- eraseText: 20
+- inputText: "8997788990011"
+
+# Simpan produk baru
+- tapOn:
+    id: "btn_save_product"
+
+# 3. [READ] Verifikasi kembali ke katalog produk
+- assertVisible:
+    text: ".*Katalog Produk.*"
+
+# Cari produk yang baru ditambahkan
+- tapOn:
+    id: "input_search_product"
+- inputText: "Mouse Wireless Maestro"
+
+# 4. [DETAIL / UPDATE] Verifikasi produk ditemukan di daftar
+- assertVisible:
+    text: ".*Mouse Wireless Maestro Test.*"
+
+# Buka detail produk
+- tapOn:
+    text: ".*Mouse Wireless Maestro Test.*"
+- assertVisible:
+    text: ".*SKU-MAE-001.*"

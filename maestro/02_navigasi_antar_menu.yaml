@@ -1,0 +1,52 @@
+appId: com.stokgudang.stok_gudang_app
+---
+# =======================================================
+# Skenario 02: Navigasi Antar Menu Utama
+# Menguji perpindahan antar modul melalui Navigation Bar & FAB
+# =======================================================
+
+- launchApp
+
+# Pastikan aplikasi berada di Dashboard
+- assertVisible:
+    text: ".*Stok Gudang.*"
+- assertVisible:
+    id: "bottom_navigation_bar"
+
+# 1. Navigasi ke menu Produk
+- tapOn:
+    id: "nav_bar_produk"
+- assertVisible:
+    text: ".*Katalog Produk.*"
+- assertVisible:
+    id: "btn_add_product"
+
+# 2. Navigasi ke menu Barang Masuk (Stock In)
+- tapOn:
+    id: "nav_bar_barang_masuk"
+- assertVisible:
+    text: ".*Barang Masuk.*"
+
+# 3. Navigasi ke menu Stok & Mutasi Gudang
+- tapOn:
+    id: "nav_bar_stok_dan_mutasi"
+- assertVisible:
+    text: ".*Stok Gudang & Mutasi.*"
+- assertVisible:
+    id: "tab_stok_terkini"
+- assertVisible:
+    id: "tab_riwayat_mutasi"
+
+# 4. Navigasi ke menu Scan Barcode melalui FAB
+- tapOn:
+    id: "fab_scan_barcode"
+- assertVisible:
+    text: ".*Scan Barcode Produk.*"
+- assertVisible:
+    id: "input_manual_barcode"
+
+# 5. Kembali ke menu Dashboard
+- tapOn:
+    id: "nav_bar_dashboard"
+- assertVisible:
+    text: ".*Stok Gudang.*"

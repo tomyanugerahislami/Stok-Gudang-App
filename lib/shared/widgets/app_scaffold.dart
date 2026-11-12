@@ -166,12 +166,15 @@ class AppScaffold extends ConsumerWidget {
       ),
       body: child,
       bottomNavigationBar: NavigationBar(
+        key: const Key('bottom_navigation_bar'),
         selectedIndex: currentIndex,
         onDestinationSelected: (idx) {
           context.go(bottomNavItems[idx].route);
         },
         destinations: bottomNavItems.map((item) {
+          final id = item.label.toLowerCase().replaceAll('&', 'dan').replaceAll(' ', '_');
           return NavigationDestination(
+            key: Key('nav_bar_$id'),
             icon: Icon(item.icon),
             selectedIcon: Icon(item.selectedIcon),
             label: item.label,
@@ -179,6 +182,7 @@ class AppScaffold extends ConsumerWidget {
         }).toList(),
       ),
       floatingActionButton: FloatingActionButton(
+        key: const Key('fab_scan_barcode'),
         onPressed: () => context.go('/barcode/scan'),
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,
@@ -630,7 +634,9 @@ class AppScaffold extends ConsumerWidget {
             padding: EdgeInsets.zero,
             children: items.map((item) {
               final isSelected = currentRoute == item.route;
+              final id = item.label.toLowerCase().replaceAll('&', 'dan').replaceAll(' ', '_');
               return ListTile(
+                key: Key('drawer_item_$id'),
                 leading: Icon(item.icon, color: isSelected ? Theme.of(context).colorScheme.primary : null),
                 title: Text(
                   item.label,

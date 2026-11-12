@@ -152,8 +152,8 @@ class _InventoryScreenState extends ConsumerState<InventoryScreen>
               unselectedLabelColor: const Color(0xFF64748B),
               indicatorColor: Theme.of(context).colorScheme.primary,
               tabs: const [
-                Tab(icon: Icon(Icons.inventory, size: 18), text: 'Stok Terkini'),
-                Tab(icon: Icon(Icons.history, size: 18), text: 'Riwayat Seluruh Mutasi'),
+                Tab(key: Key('tab_stok_terkini'), icon: Icon(Icons.inventory, size: 18), text: 'Stok Terkini'),
+                Tab(key: Key('tab_riwayat_mutasi'), icon: Icon(Icons.history, size: 18), text: 'Riwayat Seluruh Mutasi'),
               ],
             ),
             const SizedBox(height: 16),

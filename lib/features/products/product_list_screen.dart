@@ -57,6 +57,7 @@ class _ProductListScreenState extends ConsumerState<ProductListScreen> {
                 ),
                 if (canEdit)
                   ElevatedButton.icon(
+                    key: const Key('btn_add_product'),
                     onPressed: () => context.go('/products/new'),
                     icon: const Icon(Icons.add),
                     label: const Text('Tambah Produk'),
@@ -78,6 +79,7 @@ class _ProductListScreenState extends ConsumerState<ProductListScreen> {
                     SizedBox(
                       width: 260,
                       child: TextField(
+                        key: const Key('input_search_product'),
                         controller: _searchController,
                         decoration: InputDecoration(
                           hintText: 'Cari nama, SKU, barcode...',

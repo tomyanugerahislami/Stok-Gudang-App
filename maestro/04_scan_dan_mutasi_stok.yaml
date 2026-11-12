@@ -1,0 +1,44 @@
+appId: com.stokgudang.stok_gudang_app
+---
+# =======================================================
+# Skenario 04: Scan Barcode & Pengecekan Mutasi Stok Gudang
+# Menguji pemindaian barcode manual serta monitoring mutasi stok
+# =======================================================
+
+- launchApp
+
+# 1. Buka layar Scan Barcode via tombol pemindai
+- tapOn:
+    id: "fab_scan_barcode"
+- assertVisible:
+    text: ".*Scan Barcode Produk.*"
+
+# 2. Lakukan pencarian barcode dengan input manual
+- tapOn:
+    id: "input_manual_barcode"
+- inputText: "8997788990011"
+
+- tapOn:
+    id: "btn_search_barcode"
+
+# Verifikasi respons pemindaian muncul
+- assertVisible:
+    text: ".*Informasi.*|.*SKU.*|.*tidak ditemukan.*"
+
+# 3. Navigasi ke menu Stok & Mutasi Gudang
+- tapOn:
+    id: "nav_bar_stok_dan_mutasi"
+- assertVisible:
+    text: ".*Stok Gudang & Mutasi.*"
+
+# 4. Verifikasi tab Stok Terkini
+- tapOn:
+    id: "tab_stok_terkini"
+- assertVisible:
+    text: ".*Stok Terkini.*"
+
+# 5. Verifikasi tab Riwayat Seluruh Mutasi
+- tapOn:
+    id: "tab_riwayat_mutasi"
+- assertVisible:
+    text: ".*Riwayat Seluruh Mutasi.*"

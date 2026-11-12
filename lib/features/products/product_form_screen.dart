@@ -156,6 +156,7 @@ class _ProductFormScreenState extends ConsumerState<ProductFormScreen> {
 
                       // Nama Produk
                       TextFormField(
+                        key: const Key('input_product_name'),
                         controller: _nameController,
                         decoration: const InputDecoration(
                           labelText: 'Nama Produk *',
@@ -173,6 +174,7 @@ class _ProductFormScreenState extends ConsumerState<ProductFormScreen> {
                         children: [
                           Expanded(
                             child: TextFormField(
+                              key: const Key('input_product_sku'),
                               controller: _skuController,
                               decoration: InputDecoration(
                                 labelText: 'SKU / Kode Produk *',
@@ -190,6 +192,7 @@ class _ProductFormScreenState extends ConsumerState<ProductFormScreen> {
                           const SizedBox(width: 16),
                           Expanded(
                             child: TextFormField(
+                              key: const Key('input_product_barcode'),
                               controller: _barcodeController,
                               decoration: InputDecoration(
                                 labelText: 'Barcode (Code 128 / EAN) *',
@@ -316,11 +319,13 @@ class _ProductFormScreenState extends ConsumerState<ProductFormScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           OutlinedButton(
+                            key: const Key('btn_cancel_product'),
                             onPressed: () => context.go('/products'),
                             child: const Text('Batal'),
                           ),
                           const SizedBox(width: 12),
                           ElevatedButton.icon(
+                            key: const Key('btn_save_product'),
                             onPressed: _isSaving ? null : _saveProduct,
                             icon: _isSaving
                                 ? const SizedBox(

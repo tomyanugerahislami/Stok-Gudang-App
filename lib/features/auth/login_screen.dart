@@ -192,6 +192,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                       // Email input
                       TextFormField(
+                        key: const Key('login_email_input'),
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: const InputDecoration(
@@ -213,6 +214,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                       // Password input
                       TextFormField(
+                        key: const Key('login_password_input'),
                         controller: _passwordController,
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
@@ -254,6 +256,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                       // Login Button
                       ElevatedButton(
+                        key: const Key('login_button'),
                         onPressed: _isLoading ? null : () => _handleLogin(),
                         child: _isLoading
                             ? const SizedBox(
@@ -283,6 +286,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         children: [
                           Expanded(
                             child: OutlinedButton(
+                              key: const Key('login_demo_admin_button'),
                               style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 8),
                               ),
@@ -293,6 +297,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: OutlinedButton(
+                              key: const Key('login_demo_staff_button'),
                               style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 8),
                               ),
@@ -303,6 +308,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: OutlinedButton(
+                              key: const Key('login_demo_manager_button'),
                               style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 8),
                               ),

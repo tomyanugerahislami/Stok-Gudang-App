@@ -263,6 +263,7 @@ class _BarcodeScannerScreenState extends ConsumerState<BarcodeScannerScreen> {
                       children: [
                         Expanded(
                           child: TextField(
+                            key: const Key('input_manual_barcode'),
                             controller: _manualInputController,
                             keyboardType: TextInputType.text,
                             decoration: const InputDecoration(
@@ -278,6 +279,7 @@ class _BarcodeScannerScreenState extends ConsumerState<BarcodeScannerScreen> {
                         ),
                         const SizedBox(width: 12),
                         ElevatedButton.icon(
+                          key: const Key('btn_search_barcode'),
                           onPressed: () {
                             final val = _manualInputController.text.trim();
                             if (val.isNotEmpty) {

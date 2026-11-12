@@ -244,10 +244,10 @@ Aplikasi ini telah dilengkapi dengan skenario pengujian UI / End-to-End modern m
 
 | No | File Skenario | Target Pengujian | Deskripsi Pengujian |
 |:---:|---|---|---|
-| **01** | `01_login_test.yaml` | Autentikasi Pengguna | Melakukan peluncuran aplikasi, pembersihan state (*clearState*), pengisian field Email & Password, penekanan tombol Masuk, dan verifikasi bahwa halaman Dashboard berhasil tampil. |
-| **02** | `02_dashboard_test.yaml` | Tampilan Dashboard | Memastikan halaman Dashboard berhasil dimuat dengan benar serta memvalidasi ketersediaan elemen menu navigasi utama (Stok, Barang, Laporan). |
-| **03** | `03_stok_barang_test.yaml` | Modul Stok & Produk | Menavigasi ke menu Stok, membuka form Tambah Barang, menginput nama produk dan kode barang/SKU, menyimpan data, dan memverifikasi produk baru muncul di daftar. |
-| **04** | `04_scan_dan_laporan_test.yaml` | Scanner & Laporan | Menguji pembukaan layar scanner barcode kamera, pengecekan ketersediaan pemindai, serta perpindahan ke layar Laporan mutasi stok. |
+| **01** | `01_login_auth_validasi.yaml` | Login Auth & Validasi | Menguji validasi form kosong (pesan error email & password), validasi format email salah, serta login sukses via role demo admin menggunakan selector ID. |
+| **02** | `02_navigasi_antar_menu.yaml` | Navigasi Antar Menu | Memvalidasi navigasi perpindahan layar melalui Bottom Navigation Bar (Dashboard, Produk, Barang Masuk, Stok & Mutasi) dan Floating Action Button (Scan Barcode). |
+| **03** | `03_crud_produk.yaml` | CRUD Master Produk | Menguji alur penambahan produk baru (Create), pencarian produk di katalog (Read), verifikasi data master, serta melihat rincian produk (Detail/Update). |
+| **04** | `04_scan_dan_mutasi_stok.yaml` | Scan & Mutasi Stok | Menguji pemindaian barcode manual pada scanner kamera serta pengecekan mutasi stok fisik di tab Stok Terkini dan tab Riwayat Seluruh Mutasi. |
 
 ---
 
@@ -276,11 +276,17 @@ adb devices
 
 #### B. Menjalankan Satu Skenario Test
 ```bash
-# Jalankan test login
-maestro test maestro/01_login_test.yaml
+# Jalankan test login auth & validasi
+maestro test maestro/01_login_auth_validasi.yaml
 
-# Jalankan test stok barang
-maestro test maestro/03_stok_barang_test.yaml
+# Jalankan test navigasi menu
+maestro test maestro/02_navigasi_antar_menu.yaml
+
+# Jalankan test CRUD produk
+maestro test maestro/03_crud_produk.yaml
+
+# Jalankan test scan & mutasi stok
+maestro test maestro/04_scan_dan_mutasi_stok.yaml
 ```
 
 #### C. Menjalankan Seluruh Rangkaian Test (Batch)

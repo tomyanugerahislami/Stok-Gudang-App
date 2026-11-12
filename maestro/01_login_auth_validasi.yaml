@@ -1,0 +1,39 @@
+appId: com.stokgudang.stok_gudang_app
+---
+# =======================================================
+# Skenario 01: Login Autentikasi dan Validasi Form
+# Menguji validasi field kosong, format salah, dan login sukses
+# =======================================================
+
+- launchApp:
+    clearState: true
+
+# 1. Validasi ketika field dibiarkan kosong
+- tapOn:
+    id: "login_button"
+- assertVisible:
+    text: ".*Email wajib diisi.*"
+- assertVisible:
+    text: ".*Kata sandi wajib diisi.*"
+
+# 2. Validasi format email tidak valid
+- tapOn:
+    id: "login_email_input"
+- inputText: "usernametanpadomain"
+- tapOn:
+    id: "login_password_input"
+- inputText: "password123"
+- tapOn:
+    id: "login_button"
+- assertVisible:
+    text: ".*Format email tidak valid.*"
+
+# 3. Login sukses menggunakan role Admin demo
+- tapOn:
+    id: "login_demo_admin_button"
+
+# 4. Verifikasi berhasil masuk ke halaman utama Dashboard
+- assertVisible:
+    text: ".*Stok Gudang.*"
+- assertVisible:
+    id: "bottom_navigation_bar"
