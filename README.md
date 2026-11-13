@@ -18,12 +18,12 @@ Tabel identitas pengembang / mahasiswa untuk keperluan pengumpulan tugas, ujian 
 | Komponen | Keterangan |
 |---|---|
 | **Nama Lengkap** | Tomy Anugerah Islami |
-| **NIM** | [Nomor Induk Mahasiswa] |
-| **Kelas** | [Kelas / Kelompok Anda] |
-| **Program Studi** | [Nama Program Studi / Jurusan] |
-| **Fakultas / Universitas**| [Nama Fakultas / Universitas] |
-| **Mata Kuliah** | [Nama Mata Kuliah] |
-| **Dosen Pengampu** | [Nama Dosen Pengampu] |
+| **NIM** | [230103239] |
+| **Kelas** | [ 23 TI B1 ] |
+| **Program Studi** | [S1 TEKNIK INFORMATIK] |
+| **Fakultas / Universitas**| [Universitas DUTA BANGSA SURAKARTA] |
+| **Mata Kuliah** | [MOBILE TESTING] |
+| **Dosen Pengampu** | [Triyono M.KOM] |
 | **Tautan Repository** | [https://github.com/tomyanugerahislami/Stok-Gudang-App](https://github.com/tomyanugerahislami/Stok-Gudang-App) |
 | **Versi Aplikasi** | v1.0.0 (Release) |
 
